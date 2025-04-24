@@ -1,0 +1,133 @@
+1. Iniciar repositorio y ver su estado
+
+    Crear un repositorio local
+    >> git init
+
+    Ver el estado del repositorio
+    >> git status
+
+2. Seguimiento de archivos
+
+    Seguimiento a todos los archivos
+    >> git add .
+    >> git add -A
+    >> git add --all
+
+    Hacer seguimiento de uno o varios archivos
+    >> git add <nombre-archivo>
+    >> git add <nombre-archivo> <nombre-archivo-2>
+    >> git add *.js
+
+    Dejar de hacer seguimiento
+
+      Antes de realizar un commit
+      >> git rm --cached <nombre-archivo>
+      >> git reset <nombre-archivo>
+
+      Después de realizar un commit
+      >> git restore --staged <nombre-archivo>
+      >> git reset <nombre-archivo>
+
+    Eliminar todos los archivos del área de stage
+    >> git restore --staged .
+    >> git reset
+
+3. Commits
+
+    Crear un commit
+    >> git commit -m "título de commit"
+
+    Crear commit sin pasar por el área de stage
+    >> git commit -am "segundo commit"
+
+    Modificar el mensaje del último commit
+    >> git commit --amend -m "mensaje modificado"
+
+    Ver histórico de commits
+    >> git log
+    >> git log --graph
+    >> git log --oneline
+
+    Revertir cambios
+
+      Deshacer un archivo modificado
+      >> git restore <nombre-archivo>
+      >> git restore .
+      >> git restore *.md
+      >> git restore --source=<commit_hash> <archivo>
+
+      Deshacer commit
+      >> git reset --soft <commit_hash>
+      >> git reset --mixed <commit_hash>
+      >> git reset --hard <commit_hash>
+      >> git reset --soft HEAD~<n>
+
+4. Repositorio remoto (GitHub)
+
+    Vincular repositorios
+    >> git remote add origin <url-repositorio>
+    >> git remote -v
+
+    Subir cambios
+    >> git push <nombre-repositorio> <nombre-rama>
+    >> git push origin main
+    >> git push -u origin main
+    >> git push
+
+    Clonar repositorios
+    >> git clone <dirección>
+
+    Descargar cambios repositorio remoto
+    >> git pull origin main
+    >> git pull
+
+    Resolución de conflictos
+    >> git pull
+    >> git push
+
+    Aplica la configuración para este repositorio.
+    >> git pull
+    >> <conflicto>
+    >> <corrección>
+    >> git add .
+    >> git commit -m "conflicto resuelto"
+
+5. Ramas
+
+    Crear nueva rama y moverte a ella
+    >> git branch pruebas
+    >> git switch pruebas
+    >> git switch -
+    >> git checkout pruebas
+    >> git switch -c pruebas
+    >> git checkout -b pruebas
+
+    Listar ramas
+    >> git branch
+    >> git branch --show-current
+
+    Trabajando con ramas [Local y Remoto]
+    >> rama "main"
+    >> rama "pruebas"
+
+    >> git switch pruebas
+    >> git merge main
+
+    >> git switch main
+    >> git merge pruebas
+    >> git push
+
+    >> "Compare & pull request"
+    >> "Create pull request"
+    >> "Merge pull request"
+    >> "Confirm merge"
+
+    Borrar una rama
+    >> git branch -d <nombre-rama>
+    >> git branch -D pruebas
+
+    >> git push origin --delete <nombre-rama>
+    >> git push origin --delete pruebas
+
+Ignorar archivos
+>> .gitignore
